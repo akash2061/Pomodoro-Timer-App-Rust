@@ -31,31 +31,32 @@ const Timer = () => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center h-screen bg-blur-500 text-white">
-            <div className="backdrop-blur-md bg-white/10 w-full h-full absolute top-0 left-0 z-[-1]"></div>
-            <h1 className="text-4xl font-bold mb-6">Pomodoro Timer</h1>
-            <div className="text-6xl font-mono mb-8">{formatTime(timeLeft)}</div>
-            <div className="mb-4">
-                <input
-                    type="number"
-                    value={inputMinutes}
-                    onChange={(e) => setInputMinutes(e.target.value)}
-                    className="px-4 py-2 text-black rounded"
-                    placeholder="Set timer (minutes)"
-                />
+        <div className="relative flex flex-col items-center justify-center h-screen bg-[#000000c0] backdrop-blur-sm bg-opacity-50 text-white overflow-hidden">
+            <div className="relative z-10 flex flex-col items-center justify-center h-full">
+                <h1 className="text-4xl font-bold mb-6">Pomodoro Timer</h1>
+                <div className="text-6xl font-mono mb-8">{formatTime(timeLeft)}</div>
+                <div className="mb-4">
+                    <input
+                        type="number"
+                        value={inputMinutes}
+                        onChange={(e) => setInputMinutes(e.target.value)}
+                        className="px-4 py-2 text-black rounded"
+                        placeholder="Set timer (minutes)"
+                    />
+                    <button
+                        className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 ml-2"
+                        onClick={handleSetTimer}
+                    >
+                        Set Timer
+                    </button>
+                </div>
                 <button
-                    className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 ml-2"
-                    onClick={handleSetTimer}
+                    className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+                    onClick={() => setTimeLeft(1500)} // Reset the timer
                 >
-                    Set Timer
+                    Reset Timer
                 </button>
             </div>
-            <button
-                className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-                onClick={() => setTimeLeft(1500)} // Reset the timer
-            >
-                Reset Timer
-            </button>
         </div>
     );
 };

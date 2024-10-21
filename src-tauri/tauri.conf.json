@@ -15,7 +15,16 @@
         "title": "pomodoro-timer-app",
         "width": 600,
         "height": 300,
-        "transparent": true
+        "resizable": false,
+        "fullscreen": false,
+        "transparent": true,
+        "decorations": true,
+        "center": true,
+        "windowEffects": {
+          "effects": [
+            "blur"
+          ]
+        }
       }
     ],
     "security": {
