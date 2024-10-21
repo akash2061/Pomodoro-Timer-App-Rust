@@ -6,7 +6,7 @@ fn play_bell_sound() {
     let (_stream, handle) = OutputStream::try_default().unwrap();
     let sink = Sink::try_new(&handle).unwrap();
 
-    let bell_sound = include_bytes!("../assets/bell.wav");
+    let bell_sound = include_bytes!("../assets/bell.mp3");
     let cursor = Cursor::new(bell_sound.as_ref());
     let source = Decoder::new(cursor).unwrap();
 
