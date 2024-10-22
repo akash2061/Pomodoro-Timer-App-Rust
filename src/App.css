@@ -7,16 +7,8 @@
         @apply h-full;
         /* @apply bg-[#222222d2]; */
         @apply bg-transparent;
-        @apply rounded-xl;
+        @apply rounded-b-2xl;
         @apply overflow-hidden;
         @apply shadow-lg;
     }
-
-    html,
-    body {
-        @apply h-full;
-        @apply select-none;
-        @apply bg-transparent;
-    }
-
 }
