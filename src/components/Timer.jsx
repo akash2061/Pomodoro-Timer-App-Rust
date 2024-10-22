@@ -3,7 +3,8 @@ import { invoke } from '@tauri-apps/api/core';
 
 const Timer = () => {
     const [timeLeft, setTimeLeft] = useState(1500); // Default to 25 minutes
-    const [inputMinutes, setInputMinutes] = useState('');
+    const [inputHours, setInputHours] = useState(''); // Input for hours
+    const [inputMinutes, setInputMinutes] = useState(''); // Input for minutes
     const [timerName, setTimerName] = useState('Pomodoro Timer'); // Default timer name
     const [isEditingName, setIsEditingName] = useState(false); // Track if the name is being edited
 
@@ -19,16 +20,30 @@ const Timer = () => {
     }, [timeLeft]);
 
     const formatTime = (seconds) => {
-        const minutes = Math.floor(seconds / 60);
+        const hours = Math.floor(seconds / 3600);
+        const minutes = Math.floor((seconds % 3600) / 60);
         const remainingSeconds = seconds % 60;
+
+        // If there are hours, show in HH:MM:SS format
+        if (hours > 0) {
+            return `${hours}:${minutes < 10 ? '0' : ''}${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+        }
+
+        // If no hours, show in MM:SS format
         return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
     };
 
     const handleSetTimer = () => {
-        const minutes = parseInt(inputMinutes, 10);
-        if (!isNaN(minutes) && minutes > 0) {
-            setTimeLeft(minutes * 60);
+        const hours = parseInt(inputHours, 10) || 0; // Default to 0 if not set
+        const minutes = parseInt(inputMinutes, 10) || 0;
+
+        if (minutes >= 0 && minutes < 60) {
+            const totalTimeInSeconds = (hours * 3600) + (minutes * 60);
+            setTimeLeft(totalTimeInSeconds);
+            setInputHours('');
             setInputMinutes('');
+        } else {
+            alert("Minutes must be between 0 and 59.");
         }
     };
 
@@ -65,32 +80,48 @@ const Timer = () => {
                     />
                 ) : (
                     <h1
-                        className="text-4xl font-bold mb-6 cursor-pointer"
+                        className="text-4xl font-bold mb-6 border-b-2 border-transparent hover:border-gray-300"
                         onClick={() => setIsEditingName(true)} // Edit on click
                     >
                         {timerName}
                     </h1>
                 )}
 
-                <div className="text-6xl font-mono mb-8">{formatTime(timeLeft)}</div>
-                <div className="mb-4">
-                    {/* Timer Duration Input */}
+                <div className="text-6xl font-mono mb-8 transition-transform transform ease-in-out duration-200">
+                    {formatTime(timeLeft)}
+                </div>
+
+                <div className="mb-4 flex items-center space-x-2">
+                    {/* Hours Input */}
+                    <input
+                        type="number"
+                        value={inputHours}
+                        onChange={(e) => setInputHours(e.target.value)}
+                        className="px-2 py-2 w-20 text-black rounded focus:outline-none focus:ring-2 focus:ring-green-400 transition-all duration-150"
+                        placeholder="Hours"
+                        min="0"
+                    />
+
+                    {/* Minutes Input */}
                     <input
                         type="number"
                         value={inputMinutes}
-                        onChange={(e) => setInputMinutes(e.target.value)}
-                        className="px-4 py-2 text-black rounded"
-                        placeholder="Set timer (minutes)"
+                        onChange={(e) => setInputMinutes(Math.min(59, Math.max(0, parseInt(e.target.value) || 0)))}
+                        className="px-2 py-2 w-20 text-black rounded focus:outline-none focus:ring-2 focus:ring-green-400 transition-all duration-150"
+                        placeholder="Minutes"
+                        min="0"
+                        max="59"
                     />
+
                     <button
-                        className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 ml-2"
+                        className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition-all duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-green-300"
                         onClick={handleSetTimer}
                     >
                         Set Timer
                     </button>
                 </div>
                 <button
-                    className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+                    className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-all duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-300"
                     onClick={() => setTimeLeft(1500)} // Reset the timer
                 >
                     Reset Timer
