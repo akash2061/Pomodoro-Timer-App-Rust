@@ -4,6 +4,8 @@ import { invoke } from '@tauri-apps/api/core';
 const Timer = () => {
     const [timeLeft, setTimeLeft] = useState(1500); // Default to 25 minutes
     const [inputMinutes, setInputMinutes] = useState('');
+    const [timerName, setTimerName] = useState('Pomodoro Timer'); // Default timer name
+    const [isEditingName, setIsEditingName] = useState(false); // Track if the name is being edited
 
     useEffect(() => {
         if (timeLeft > 0) {
@@ -30,12 +32,49 @@ const Timer = () => {
         }
     };
 
+    // Handle the timer name change
+    const handleNameChange = (e) => {
+        const newName = e.target.value;
+        if (newName.length <= 30) { // Limit the name length to 30 characters
+            setTimerName(newName);
+        }
+    };
+
+    // Handle when editing is complete
+    const handleBlur = () => {
+        // Revert to default name if empty
+        if (timerName.trim() === '') {
+            setTimerName('Pomodoro Timer');
+        }
+        setIsEditingName(false);
+    };
+
     return (
         <div className="relative flex flex-col items-center justify-center h-screen bg-[#000000c0] backdrop-blur-sm bg-opacity-50 text-white overflow-hidden">
             <div className="relative z-10 flex flex-col items-center justify-center h-full">
-                <h1 className="text-4xl font-bold mb-6">Pomodoro Timer</h1>
+                {/* Editable Timer Name */}
+                {isEditingName ? (
+                    <input
+                        type="text"
+                        value={timerName}
+                        onChange={handleNameChange}
+                        onBlur={handleBlur} // Save on blur
+                        autoFocus
+                        maxLength={30} // Limit to 30 characters
+                        className="bg-transparent text-4xl font-bold mb-6 border-b-2 border-gray-300 text-center outline-none focus:outline-none"
+                    />
+                ) : (
+                    <h1
+                        className="text-4xl font-bold mb-6 cursor-pointer"
+                        onClick={() => setIsEditingName(true)} // Edit on click
+                    >
+                        {timerName}
+                    </h1>
+                )}
+
                 <div className="text-6xl font-mono mb-8">{formatTime(timeLeft)}</div>
                 <div className="mb-4">
+                    {/* Timer Duration Input */}
                     <input
                         type="number"
                         value={inputMinutes}
