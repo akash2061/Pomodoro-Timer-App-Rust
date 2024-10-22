@@ -64,8 +64,19 @@ const Timer = () => {
         setIsEditingName(false);
     };
 
+    // Ensure only numbers are entered in the input fields
+    const handleHoursChange = (e) => {
+        const value = e.target.value.replace(/\D/g, ''); // Remove any non-digit characters
+        setInputHours(value);
+    };
+
+    const handleMinutesChange = (e) => {
+        const value = e.target.value.replace(/\D/g, ''); // Remove any non-digit characters
+        setInputMinutes(Math.min(59, Math.max(0, parseInt(value) || 0)).toString()); // Ensure minutes are within 0-59
+    };
+
     return (
-        <div className="relative flex flex-col items-center justify-center h-screen bg-[#000000c0] backdrop-blur-sm bg-opacity-50 text-white overflow-hidden">
+        <div className="relative flex flex-col items-center justify-center h-screen bg-[#000000] bg-opacity-90 text-white overflow-hidden">
             <div className="relative z-10 flex flex-col items-center justify-center h-full">
                 {/* Editable Timer Name */}
                 {isEditingName ? (
@@ -94,25 +105,24 @@ const Timer = () => {
                 <div className="mb-4 flex items-center space-x-2">
                     {/* Hours Input */}
                     <input
-                        type="number"
+                        type="text"
                         value={inputHours}
-                        onChange={(e) => setInputHours(e.target.value)}
+                        onChange={handleHoursChange}
                         className="px-2 py-2 w-20 text-black rounded focus:outline-none focus:ring-2 focus:ring-green-400 transition-all duration-150"
                         placeholder="Hours"
-                        min="0"
+                        inputMode="numeric" // Ensure numeric keyboard on mobile
                     />
-
+                    
                     {/* Minutes Input */}
                     <input
-                        type="number"
+                        type="text"
                         value={inputMinutes}
-                        onChange={(e) => setInputMinutes(Math.min(59, Math.max(0, parseInt(e.target.value) || 0)))}
+                        onChange={handleMinutesChange}
                         className="px-2 py-2 w-20 text-black rounded focus:outline-none focus:ring-2 focus:ring-green-400 transition-all duration-150"
                         placeholder="Minutes"
-                        min="0"
-                        max="59"
+                        inputMode="numeric" // Ensure numeric keyboard on mobile
                     />
-
+                    
                     <button
                         className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition-all duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-green-300"
                         onClick={handleSetTimer}

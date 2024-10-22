@@ -18,6 +18,7 @@
         "resizable": false,
         "fullscreen": false,
         "transparent": true,
+        "shadow": false,
         "decorations": true,
         "center": true,
         "windowEffects": {
