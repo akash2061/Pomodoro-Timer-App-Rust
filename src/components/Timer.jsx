@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { invoke } from '@tauri-apps/api/core';
 
 const Timer = () => {
-    const [timeLeft, setTimeLeft] = useState(1500); // Default to 25 minutes
+    const [timeLeft, setTimeLeft] = useState(5); // Default to 25 minutes
     const [inputHours, setInputHours] = useState(''); // Input for hours
     const [inputMinutes, setInputMinutes] = useState(''); // Input for minutes
     const [timerName, setTimerName] = useState('Pomodoro Timer'); // Default timer name
@@ -112,7 +112,7 @@ const Timer = () => {
                         placeholder="Hours"
                         inputMode="numeric" // Ensure numeric keyboard on mobile
                     />
-                    
+
                     {/* Minutes Input */}
                     <input
                         type="text"
@@ -122,7 +122,7 @@ const Timer = () => {
                         placeholder="Minutes"
                         inputMode="numeric" // Ensure numeric keyboard on mobile
                     />
-                    
+
                     <button
                         className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition-all duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-green-300"
                         onClick={handleSetTimer}
