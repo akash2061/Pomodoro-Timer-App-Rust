@@ -13,12 +13,6 @@
     }
 }
 
-nav.window-controls {
-    display: flex;
-    gap: 0.5em;
-    padding: 0.8em 0.8em;
-}
-
-nav>button {
-    padding: 0.4em 0.6em;
+#drag-region {
+    filter: blur(10px);
 }
