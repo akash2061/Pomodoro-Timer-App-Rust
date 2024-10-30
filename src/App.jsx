@@ -1,22 +1,29 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import { invoke } from "@tauri-apps/api/core";
 import "./App.css";
 import Timer from "./components/Timer";
+// import getCurrentWindow from "@tauri-apps/api/core";
 
 function App() {
-  const [greetMsg, setGreetMsg] = useState("");
-  const [name, setName] = useState("");
+  const minimizeWebview = async () => {
+    const currentWindow = await getCurrentWindow();
+    await currentWindow.minimize();
+  };
 
-  async function greet() {
-    // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-    setGreetMsg(await invoke("greet", { name }));
-  }
+  const closeWebview = async () => {
+    const currentWindow = await getCurrentWindow();
+    await currentWindow.close();
+  };
 
   return (
-    <div>
-      <Timer />
-    </div>
+    <>
+      <nav
+        data-tauri-drag-region
+        className="flex justify-end items-center rounded-3xl bg-slate-500 h-7 w-full"
+      >
+        <button onClick={minimizeWebview}>🗕</button>
+        <button onClick={closeWebview}>🗙</button>
+      </nav>
+        <Timer />
+    </>
   );
 }
 

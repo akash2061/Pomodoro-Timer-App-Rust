@@ -7,8 +7,18 @@
         @apply h-full;
         /* @apply bg-[#222222d2]; */
         @apply bg-transparent;
-        @apply rounded-b-2xl;
+        @apply rounded-2xl;
         @apply overflow-hidden;
         @apply shadow-lg;
     }
+}
+
+nav.window-controls {
+    display: flex;
+    gap: 0.5em;
+    padding: 0.8em 0.8em;
+}
+
+nav>button {
+    padding: 0.4em 0.6em;
 }
