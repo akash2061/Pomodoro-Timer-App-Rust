@@ -7,7 +7,7 @@
         @apply h-full;
         /* @apply bg-[#222222d2]; */
         @apply bg-transparent;
-        @apply rounded-2xl;
+        @apply rounded-xl;
         @apply overflow-hidden;
         @apply shadow-lg;
     }

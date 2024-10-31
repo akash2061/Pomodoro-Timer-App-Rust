@@ -76,7 +76,7 @@ const Timer = () => {
     };
 
     return (
-        <div className="relative flex flex-col items-center justify-center h-[18rem] text-white overflow-hidden">
+        <div className="relative flex flex-col items-center justify-center h-[18rem] text-white overflow-hidden bg-[#202225] opacity-[0.95] rounded-2xl mt-1">
             <div className="relative z-10 flex flex-col items-center justify-center h-full">
                 {/* Editable Timer Name */}
                 {isEditingName ? (
