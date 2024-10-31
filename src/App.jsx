@@ -14,7 +14,7 @@ function App() {
   };
 
   return (
-    <div className="bg-[#202225] opacity-[0.97]">
+    <div className="bg-[#202225] opacity-[0.95]">
       <div
         data-tauri-drag-region
         className="relative flex items-center rounded-3xl h-7 w-full bg-[#40444b] px-4"
