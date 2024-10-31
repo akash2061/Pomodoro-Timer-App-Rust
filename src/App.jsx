@@ -18,7 +18,7 @@ function App() {
     <div>
       <div
         data-tauri-drag-region
-        className="relative flex items-center rounded-3xl h-7 w-full bg-[#40444b] px-4"
+        className="relative flex items-center rounded-3xl h-7 w-full bg-[#40444b] opacity-[0.90] px-4"
       >
         <div data-tauri-drag-region className="flex-grow text-center font-bold text-cyan-100 ml-14">Pomodoro-Timer
         </div>
