@@ -12,7 +12,6 @@ async fn play_bell_sound(_app_handle: AppHandle) {
     let source = Decoder::new(cursor).unwrap();
 
     sink.append(source);
-    // let _ = create_notification_window(app_handle);
     sink.sleep_until_end();
 }
 
