@@ -15,13 +15,12 @@ function App() {
 
   return (
     // <div className="bg-[#202225] opacity-[0.95]">
-    <div>
+    <div className="items-center">
       <div
         data-tauri-drag-region
         className="relative flex items-center rounded-3xl h-7 w-full bg-[#40444b] opacity-[0.90] px-4"
       >
-        <div data-tauri-drag-region className="flex-grow text-center font-bold text-cyan-100 ml-14">Pomodoro-Timer
-        </div>
+        <div data-tauri-drag-region className="flex-grow text-center font-bold text-cyan-100 ml-12">Pomodoro-Timer</div>
         <div className="flex space-x-2">
           <button onClick={minimizeWebview}>🟡</button>
           <button onClick={closeWebview}>🔴</button>
