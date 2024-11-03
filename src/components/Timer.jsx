@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { invoke } from '@tauri-apps/api/core';
+import { toast } from 'sonner';
 
 const Timer = () => {
     const [timeLeft, setTimeLeft] = useState(5); // Testing == 5seconds
@@ -15,6 +16,16 @@ const Timer = () => {
             }, 1000);
             return () => clearInterval(timer);
         } else {
+            if (timerName !== 'Pomodoro Timer') {
+                toast.success(`${timerName} is done!`, {
+                    duration: 3000
+                });
+            } else {
+                toast.success('Time to take a break!', {
+                    duration: 3000
+                });
+            }
+            invoke('bring_window_to_front');
             invoke('play_bell_sound');
         }
     }, [timeLeft]);

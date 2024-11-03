@@ -1,6 +1,7 @@
 import "./App.css";
 import Timer from "./components/Timer";
 import { getCurrentWindow } from "@tauri-apps/api/window";
+import { Toaster } from 'sonner';
 
 function App() {
   const minimizeWebview = async () => {
@@ -27,6 +28,7 @@ function App() {
         </div>
       </div>
       <Timer />
+      <Toaster richColors position="top-center" />
     </div>
   );
 }

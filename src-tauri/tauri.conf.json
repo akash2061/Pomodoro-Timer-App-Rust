@@ -21,6 +21,8 @@
         "shadow": false,
         "decorations": false,
         "center": true,
+        "focus": true,
+        "alwaysOnTop": false,
         "windowEffects": {
           "effects": [
             "blur"
