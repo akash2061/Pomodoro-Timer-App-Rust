@@ -22,12 +22,7 @@
         "decorations": false,
         "center": true,
         "focus": true,
-        "alwaysOnTop": false,
-        "windowEffects": {
-          "effects": [
-            "blur"
-          ]
-        }
+        "alwaysOnTop": false
       }
     ],
     "security": {
