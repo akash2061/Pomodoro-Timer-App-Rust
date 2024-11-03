@@ -18,11 +18,11 @@ const Timer = () => {
         } else {
             if (timerName !== 'Pomodoro Timer') {
                 toast.success(`${timerName} is done!`, {
-                    duration: 3000
+                    duration: 5000
                 });
             } else {
                 toast.success('Time to take a break!', {
-                    duration: 3000
+                    duration: 5000
                 });
             }
             invoke('bring_window_to_front');

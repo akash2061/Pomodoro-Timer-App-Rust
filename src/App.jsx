@@ -28,7 +28,21 @@ function App() {
         </div>
       </div>
       <Timer />
-      <Toaster richColors position="top-center" />
+      <Toaster richColors position="top-center" theme="dark"
+        toastOptions={{
+          style: {
+            fontSize: '1rem',
+            padding: '1rem',
+            marginTop: '1rem',
+            // backgroundColor: '#2d3748f0',
+            color: '#f7fafc',
+            borderRadius: '0.5rem',
+            boxShadow: '0 0 0.5rem rgba(0, 0, 0, 0.1)',
+            // border: '1px solid #2d3748',
+            zIndex: 9999
+          }
+        }}
+      />
     </div>
   );
 }
