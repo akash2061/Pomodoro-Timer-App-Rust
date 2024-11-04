@@ -1,4 +1,11 @@
 ![Header](./assets/github-header-image.png)
+![Version](https://img.shields.io/github/v/release/akash2061/Pomodoro-Timer-App-Rust)
+![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20Windows-blueviolet)
+![Rust](https://img.shields.io/badge/language-Rust-blue)
+![Tauri Version](https://img.shields.io/badge/Tauri-v2.0-blue)
+![GitHub all releases](https://img.shields.io/github/downloads/akash2061/Pomodoro-Timer-App-Rust/total)
+![Maintenance](https://img.shields.io/badge/maintenance-actively--maintained-brightgreen)
+
 # Pomodoro Timer App
 
 Welcome to the **Pomodoro Timer App**! This desktop application is designed for Linux users who want an efficient, distraction-free timer to support their focus and productivity. The app is developed in **Rust** and **Tauri v2** and incorporates customizable alerts and a modern user interface.
