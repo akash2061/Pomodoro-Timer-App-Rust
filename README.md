@@ -4,8 +4,8 @@
 ![Rust](https://img.shields.io/badge/language-Rust-blue)
 ![Tauri Version](https://img.shields.io/badge/Tauri-v2.0-blue)
 ![GitHub all releases](https://img.shields.io/github/downloads/akash2061/Pomodoro-Timer-App-Rust/total)
-![GitHub Downloads (specific asset, specific tag)](https://img.shields.io/github/downloads/akash2061/Pomodoro-Timer-App-Rust/v0.1.0/Pomodoro-Timer_0.1.0_x64-setup.exe)
 ![GitHub Downloads (specific asset, specific tag)](https://img.shields.io/github/downloads/akash2061/Pomodoro-Timer-App-Rust/v0.1.0/Pomodoro-Timer_0.1.0_amd64.deb)
+![GitHub Downloads (specific asset, specific tag)](https://img.shields.io/github/downloads/akash2061/Pomodoro-Timer-App-Rust/v0.1.0/Pomodoro-Timer_0.1.0_x64-setup.exe)
 ![Maintenance](https://img.shields.io/badge/maintenance-actively--maintained-brightgreen)
 
 # Pomodoro Timer App
