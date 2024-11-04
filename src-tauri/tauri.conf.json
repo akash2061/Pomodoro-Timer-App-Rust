@@ -1,6 +1,6 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "pomodoro-timer-app",
+  "productName": "Pomodoro-Timer",
   "version": "0.1.0",
   "identifier": "com.pomodoro-timer-app.app",
   "build": {

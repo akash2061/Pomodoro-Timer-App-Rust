@@ -3,6 +3,19 @@
 version = 3
 
 [[package]]
+name = "Pomodoro-Timer"
+version = "0.1.0"
+dependencies = [
+ "rodio",
+ "serde",
+ "serde_json",
+ "tauri",
+ "tauri-build",
+ "tauri-plugin-shell",
+ "tokio",
+]
+
+[[package]]
 name = "addr2line"
 version = "0.24.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2538,19 +2551,6 @@ dependencies = [
  "fdeflate",
  "flate2",
  "miniz_oxide",
-]
-
-[[package]]
-name = "pomodoro-timer-app"
-version = "0.1.0"
-dependencies = [
- "rodio",
- "serde",
- "serde_json",
- "tauri",
- "tauri-build",
- "tauri-plugin-shell",
- "tokio",
 ]
 
 [[package]]
