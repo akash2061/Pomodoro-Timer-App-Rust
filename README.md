@@ -1,4 +1,5 @@
 ![Header](./assets/github-header-image.png)
+
 ![Version](https://img.shields.io/github/v/release/akash2061/Pomodoro-Timer-App-Rust)
 ![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20Windows-blueviolet)
 ![Rust](https://img.shields.io/badge/language-Rust-blue)
