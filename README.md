@@ -1,8 +1,9 @@
+![Header](./assets/github-header-image.png)
 # Pomodoro Timer App
 
 Welcome to the **Pomodoro Timer App**! This desktop application is designed for Linux users who want an efficient, distraction-free timer to support their focus and productivity. The app is developed in **Rust** and **Tauri v2** and incorporates customizable alerts and a modern user interface.
 
-[![View-Demo](./assets/Demo.png)](./assets/Demo.mp4)
+![View-Demo](./assets/Demo.png)
 
 ## Features
 
