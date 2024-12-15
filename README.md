@@ -63,3 +63,7 @@ This project is licensed under the MIT License. See the LICENSE file for details
 Special thanks to the Tauri and Rust communities for their extensive [documentation](https://v2.tauri.app/) and resources.
 
 Happy productivity! 🎯
+
+<p align="center">
+<a  href="https://www.buymeacoffee.com/akash2061"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a Coffee&emoji=☕&slug=akash2061&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>
+</p>
