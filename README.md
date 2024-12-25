@@ -11,12 +11,12 @@
 ![GitHub Downloads (specific asset, specific tag)](https://img.shields.io/github/downloads/akash2061/Pomodoro-Timer-App-Rust/v0.1.0/Pomodoro-Timer_0.1.0_x64-setup.exe?label=.exe&color=azure) 
 ![GitHub Downloads (specific asset, all releases)](https://img.shields.io/github/downloads/akash2061/Pomodoro-Timer-App-Rust/Pomodoro-Timer-0.1.0-1.x86_64.rpm?label=.rpm&color=azure)
 
-
 # Pomodoro Timer App
 
 Welcome to the **Pomodoro Timer App**! This desktop application is designed for users who want an efficient, distraction-free timer to enhance focus and productivity. Built using Rust and Tauri v2, the app features customizable alerts and a modern user interface to streamline your workflow.
 
-![View-Demo](./assets/Demo.png)
+[//]: ![View-Demo](./assets/Demo.png)
+[Demo](https://github.com/user-attachments/assets/76772cf1-a9ed-4d95-b499-36bab16f6b6b)
 
 ## Features
 
